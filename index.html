@@ -3,111 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chris Gerlach | Data Scientist & Researcher</title>
+    <title>Chris Gerlach | Computational Mathematics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Reset and Styling */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #2c3e50;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #2980b9;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+            background-color: #34495e;
+            color: white;
+            padding: 20px 10%;
             text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
         }
         nav {
-            margin: 10px 20px;
+            display: flex;
+            justify-content: center;
+            background-color: #2c3e50;
+            padding: 10px 0;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
+        nav a {
+            margin: 0 15px;
             font-weight: bold;
+            color: white;
         }
         section {
+            margin: 20px 10%;
             padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #2c3e50;
         }
         footer {
-            background-color: #333;
-            color: #fff;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-color: #34495e;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
         }
-        h1, h2 {
-            color: #333;
+        .visuals img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .blog-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .blog-link:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Chris Gerlach</h1>
-        <p>Data Scientist | PhD Researcher | Educator</p>
+        <p>PhD Candidate | Computational Mathematics & Data Science</p>
     </header>
     
     <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#powerlifting">Powerlifting</a></li>
-        </ul>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
     </nav>
-    
+
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a PhD candidate in data science with a strong focus on developing algorithms for longitudinal biomedical data. My work includes predicting brain cancer recurrence using multimodal MRI data, optimizing mechanical ventilation weaning for NICU patients, and mentoring undergraduate researchers. I am passionate about applying advanced machine learning techniques to solve real-world biomedical problems.</p>
+        <p>
+            I am a PhD candidate in Computational Mathematics at Michigan State University, specializing in predictive modeling for 
+            healthcare and high-dimensional simulations. My work involves machine learning techniques applied to longitudinal biomedical 
+            imaging, plasma simulations, and data-driven algorithm development.
+        </p>
+        <div class="visuals">
+            <img src="placeholder-about.jpg" alt="A visual representation of my research">
+        </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
         <ul>
-            <li><strong>Mechanical Ventilation Optimization</strong>: Developing a model to optimize the weaning process for neonatal ICU patients.</li>
-            <li><strong>MRI Brain Cancer Recurrence Prediction</strong>: Using multimodal MRI data to predict brain cancer recurrence in collaboration with Michigan State University.</li>
-            <li><strong>Plasma Simulations</strong>: Conducted advanced plasma simulations using FFT and correlation models in hydrodynamics.</li>
-            <li><strong>Powerlifting Programming</strong>: Created custom powerlifting programs for fitness and strength progression, with a focus on rowing strength and work capacity.</li>
+            <li><strong>Brain Cancer Progression Modeling:</strong> Used LSTM-based models on MRI data, achieving state-of-the-art performance.</li>
+            <li><strong>NICU Ventilator Decision Support:</strong> Developed machine learning tools to assist clinicians in optimizing patient care.</li>
+            <li><strong>Plasma Simulations:</strong> Advanced modeling and forecasting techniques for high-dimensional plasma systems.</li>
         </ul>
+        <div class="visuals">
+            <img src="placeholder-projects.jpg" alt="Project visual">
+        </div>
     </section>
 
     <section id="research">
-        <h2>Research</h2>
-        <p>My research focuses on applying machine learning models to biomedical data, especially in longitudinal settings. Current research includes:</p>
+        <h2>Research & Publications</h2>
+        <p>
+            Explore my academic research and contributions:
+        </p>
         <ul>
-            <li><strong>Predictive Models for Brain Cancer Recurrence</strong>: Developing advanced machine learning models to predict recurrence based on MRI data.</li>
-            <li><strong>NICU Mechanical Ventilation Optimization</strong>: Improving the mechanical ventilation process for NICU patients using time-series analysis and synthetic data generation.</li>
+            <li><a href="Gerlach_CV.pdf" target="_blank">Download My CV</a></li>
+            <li><a href="Masters_Thesis.pdf" target="_blank">Read My Master’s Thesis</a></li>
+            <li><a href="BME_891_Final_Project.pdf" target="_blank">BME 891: Glioma Progression Prediction</a></li>
+            <li><a href="CMSE_890_Final_Project.pdf" target="_blank">CMSE 890: Brain Tumor Analysis</a></li>
+        </ul>
+        <div class="visuals">
+            <img src="placeholder-research.jpg" alt="Research visualization">
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>
+            I share my thoughts on research, teaching, and projects on my personal blog. Check it out to learn more about what I’m working on:
+        </p>
+        <a href="https://github.com/ChrisG32123" class="blog-link" target="_blank">Visit My Blog</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            Let’s connect! Feel free to reach out if you’d like to discuss collaborations, research, or teaching opportunities:
+        </p>
+        <ul>
+            <li>Email: <a href="mailto:chrisg.32123@gmail.com">chrisg.32123@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/chris-m-gerlach" target="_blank">linkedin.com/in/chris-m-gerlach</a></li>
+            <li>GitHub: <a href="https://github.com/ChrisG32123" target="_blank">github.com/ChrisG32123</a></li>
+            <li>ResearchGate: <a href="https://www.researchgate.net/profile/Chris-Gerlach-2" target="_blank">Chris Gerlach</a></li>
         </ul>
     </section>
 
-    <section id="teaching">
-        <h2>Teaching</h2>
-        <p> </p>
-    </section>
-
-    <section id="powerlifting">
-        <h2>Powerlifting</h2>
-        <p>In addition to my academic and research work, I am a dedicated powerlifter, focusing on strength, conditioning, and work capacity. I have developed custom programs to increase rowing strength and enhance overall fitness. My training philosophy is based on balancing heavy lifts with unilateral work, conditioning, and explosive movements.</p>
-    </section>
-
-    <section id="cv">
-        <h2>View My CV</h2>
-        <p>While this site is being built, feel free to visit my CV by clicking the link below (also being built):</p>
-        <a href="CV/output.pdf" target="_blank">View My CV</a>
-    </section>
-
     <footer>
-        <p>&copy; 2024 Chris Gerlach. All Rights Reserved.</p>
+        <p>&copy; 2024 Chris Gerlach. Designed with ❤️</p>
     </footer>
 </body>
 </html>
