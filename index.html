@@ -1,162 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chris Gerlach | Computational Mathematics</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and Styling */
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
-            color: #2c3e50;
-        }
-        a {
-            text-decoration: none;
-            color: #3498db;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #2980b9;
-        }
-        header {
-            background-color: #34495e;
-            color: white;
-            padding: 20px 10%;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5em;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #2c3e50;
-            padding: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            font-weight: bold;
-            color: white;
-        }
-        section {
-            margin: 20px 10%;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
-            color: #2c3e50;
-        }
-        footer {
-            text-align: center;
-            background-color: #34495e;
-            color: white;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-        .visuals img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 10px 0;
-        }
-        .blog-link {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #3498db;
-            color: white;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        .blog-link:hover {
-            background-color: #2980b9;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chris Gerlach | Computational Mathematics & Data Science</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS Reset and Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f4f4f9, #eaeaea);
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #3498db;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #2980b9;
+    }
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, #34495e, #2c3e50);
+      color: #fff;
+      padding: 80px 10%;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5em;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    /* Navigation Styles */
+    nav {
+      background: #2c3e50;
+      padding: 15px 10%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      margin: 0 20px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+    /* Section Styles */
+    section {
+      margin: 60px 10%;
+      padding: 40px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    section:nth-of-type(1) {
+      animation-delay: 0.2s;
+    }
+    section:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+    section:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+    section:nth-of-type(4) {
+      animation-delay: 0.8s;
+    }
+    section h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    section p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+    section ul {
+      list-style: none;
+      padding: 0;
+    }
+    section ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    section ul li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #3498db;
+    }
+    /* Visuals and Button */
+    .visuals img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: transform 0.3s;
+    }
+    .visuals img:hover {
+      transform: scale(1.05);
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin-top: 15px;
+      background-color: #3498db;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #2c3e50;
+      color: #fff;
+      padding: 30px 10%;
+    }
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      header {
+        padding: 60px 5%;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+      section {
+        margin: 40px 5%;
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Chris Gerlach</h1>
-        <p>PhD Candidate | Computational Mathematics & Data Science</p>
-    </header>
-    
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a PhD candidate in Computational Mathematics at Michigan State University, specializing in predictive modeling for healthcare and high-dimensional simulations. 
-            My work involves machine learning techniques applied to longitudinal biomedical imaging and algorithm development. 
-            I have a Master's of Science in Applied Mathematics from San Jose State University where I researched computational plasma physics.
-
-            In a previous life, I was a Math Specialist in gifted education for middle schoolers, and a teaching assitant and tutor before that. 
-            I have been involved in math education for as long as I can remember, developed elementary through collegiate math curriculum, and have taught calculus nearly 20 separate times before the age of 24. 
-
-            Additionally, I am a 
-            <em>
-                very                
-            </em>
-            amateur strength athlete, recreationally competing in Strongman Competitions.
-        </p>
-        
-        <a href="https://github.com/ChrisG32123" class="blog-link" target="_blank">Check out my projects on Github!</a>
-        <div class="visuals">
-            <img src="placeholder-about.jpg" alt="A visual representation of my research">
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Brain Cancer Progression Modeling:</strong> Used LSTM-based models on MRI data, achieving state-of-the-art performance.</li>
-            <li><strong>NICU Ventilator Decision Support:</strong> Developed machine learning tools to assist clinicians in optimizing patient care.</li>
-            <li><strong>Plasma Simulations:</strong> Advanced modeling and forecasting techniques for high-dimensional plasma systems.</li>
-        </ul>
-        <div class="visuals">
-            <img src="placeholder-projects.jpg" alt="Project visual">Under Development</a>
-        </div>
-    </section>
-
-    <section id="research">
-        <h2>Research & Publications</h2>
-        <p>
-            Explore my academic research and contributions:
-        </p>
-        <ul>
-            <li><a href="Gerlach Data Science Resume.pdf" target="_blank">Download My CV</a></li>
-            <li><a href="BME_891_Final_Project.pdf" target="_blank"> Glioma Progression Prediction</a></li>
-            <li><a href="Masters_Thesis.pdf" target="_blank">Read My Master’s Thesis</a></li>
-        </ul>
-        <div class="visuals">
-            <img src="placeholder-research.jpg" alt="Research visualization">Under Development</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>
-            Let’s connect! Feel free to reach out if you’d like to discuss collaborations, research, or teaching opportunities:
-        </p>
-        <ul>
-            <li>Email: <a href="mailto:chrisg.32123@gmail.com">chrisg.32123@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/chris-m-gerlach" target="_blank">linkedin.com/in/chris-m-gerlach</a></li>
-            <li>GitHub: <a href="https://github.com/ChrisG32123" target="_blank">github.com/ChrisG32123</a></li>
-            <li>ResearchGate: <a href="https://www.researchgate.net/profile/Chris-Gerlach-2" target="_blank">Chris Gerlach</a></li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Chris Gerlach. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>Chris Gerlach</h1>
+    <p>PhD Candidate | Computational Mathematics & Data Science</p>
+  </header>
+  
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a PhD candidate in Computational Mathematics at Michigan State University, specializing in predictive modeling for healthcare and high-dimensional simulations.
+      My work involves advanced machine learning techniques applied to biomedical imaging and algorithm development.
+    </p>
+    <p>
+      With extensive experience in math education—from middle school to collegiate levels—I develop innovative, project-based curricula that integrate data science and computational methods.
+      Additionally, I am an avid strength athlete, competing in amateur strongman competitions.
+    </p>
+    <a href="https://github.com/ChrisG32123" class="btn" target="_blank">View My GitHub Projects</a>
+    <div class="visuals">
+      <img src="placeholder-about.jpg" alt="Research visualization" />
+    </div>
+  </section>
+  
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Brain Cancer Progression Modeling:</strong> Leveraged LSTM-based models on MRI data to achieve state-of-the-art performance in predicting tumor evolution.</li>
+      <li><strong>NICU Ventilator Decision Support:</strong> Developed machine learning tools to assist clinicians in optimizing neonatal care.</li>
+      <li><strong>Plasma Simulations:</strong> Implemented advanced forecasting techniques for high-dimensional plasma systems, enhancing simulation efficiency.</li>
+    </ul>
+    <div class="visuals">
+      <img src="placeholder-projects.jpg" alt="Project overview" />
+    </div>
+  </section>
+  
+  <section id="research">
+    <h2>Research & Publications</h2>
+    <p>Explore my academic research and contributions:</p>
+    <ul>
+      <li><a href="Gerlach%20Data%20Science%20Resume.pdf" target="_blank">Download My CV</a></li>
+      <li><a href="BME_891_Final_Project.pdf" target="_blank">Glioma Progression Prediction</a></li>
+      <li><a href="Masters_Thesis.pdf" target="_blank">Read My Master’s Thesis</a></li>
+    </ul>
+    <div class="visuals">
+      <img src="placeholder-research.jpg" alt="Research overview" />
+    </div>
+  </section>
+  
+  <section id="teaching">
+    <h2>Teaching & Curriculum Development</h2>
+    <p>
+      With extensive experience teaching calculus and advanced mathematics, I specialize in creating engaging, project-based learning experiences.
+      My courses emphasize interdisciplinary approaches, integrating data science with traditional mathematical theory.
+    </p>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      Let’s connect! Feel free to reach out to discuss collaborations, research, or teaching opportunities:
+    </p>
+    <ul>
+      <li>Email: <a href="mailto:chrisg.32123@gmail.com">chrisg.32123@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/chris-m-gerlach" target="_blank">linkedin.com/in/chris-m-gerlach</a></li>
+      <li>GitHub: <a href="https://github.com/ChrisG32123" target="_blank">github.com/ChrisG32123</a></li>
+      <li>ResearchGate: <a href="https://www.researchgate.net/profile/Chris-Gerlach-2" target="_blank">Chris Gerlach</a></li>
+    </ul>
+  </section>
+  
+  <footer>
+    <p>&copy; 2024 Chris Gerlach. All rights reserved.</p>
+  </footer>
 </body>
 </html>
