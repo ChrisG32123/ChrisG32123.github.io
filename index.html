@@ -78,18 +78,11 @@
       transform: translateY(20px);
       animation: fadeInUp 1s forwards;
     }
-    section:nth-of-type(1) {
-      animation-delay: 0.2s;
-    }
-    section:nth-of-type(2) {
-      animation-delay: 0.4s;
-    }
-    section:nth-of-type(3) {
-      animation-delay: 0.6s;
-    }
-    section:nth-of-type(4) {
-      animation-delay: 0.8s;
-    }
+    section:nth-of-type(1) { animation-delay: 0.2s; }
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.8s; }
+    section:nth-of-type(5) { animation-delay: 1s; }
     section h2 {
       color: #2c3e50;
       margin-bottom: 20px;
@@ -110,6 +103,33 @@
     }
     section ul li:before {
       content: '✓';
+      position: absolute;
+      left: 0;
+      color: #3498db;
+    }
+    /* Project Card Styles */
+    .project {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+    }
+    .project h3 {
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .project ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .project ul li {
+      margin-bottom: 8px;
+      padding-left: 18px;
+      position: relative;
+    }
+    .project ul li:before {
+      content: '•';
       position: absolute;
       left: 0;
       color: #3498db;
@@ -139,6 +159,22 @@
       background-color: #2980b9;
       transform: translateY(-3px);
     }
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    form button {
+      align-self: flex-start;
+    }
     /* Footer */
     footer {
       text-align: center;
@@ -159,91 +195,140 @@
     }
     /* Responsive Media Queries */
     @media (max-width: 768px) {
-      header {
-        padding: 60px 5%;
-      }
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav a {
-        margin: 10px 0;
-      }
-      section {
-        margin: 40px 5%;
-        padding: 30px;
-      }
+      header { padding: 60px 5%; }
+      nav { flex-direction: column; align-items: center; }
+      nav a { margin: 10px 0; }
+      section { margin: 40px 5%; padding: 30px; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Chris Gerlach</h1>
-    <p>PhD Candidate | Computational Mathematics & Data Science</p>
+    <p>Data Scientist | STEM Educator | PhD Student</p>
   </header>
   
   <nav>
     <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#research">Research</a>
-    <a href="#teaching">Teaching</a>
+    <a href="#projects">Research Projects & Publications</a>
+    <a href="#teaching">Teaching & Curriculum Development</a>
     <a href="#contact">Contact</a>
   </nav>
   
+  <!-- ABOUT ME Section -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a PhD candidate in Computational Mathematics at Michigan State University, specializing in predictive modeling for healthcare and high-dimensional simulations.
-      My work involves advanced machine learning techniques applied to biomedical imaging and algorithm development.
+      Most medical imaging analyses focus solely on the final snapshot, but I believe there’s a richer story to be told. By incorporating previous scans into a dynamic time series, my research builds models that capture the full evolution of a condition for enhanced accuracy.
     </p>
     <p>
-      With extensive experience in math education—from middle school to collegiate levels—I develop innovative, project-based curricula that integrate data science and computational methods.
-      Additionally, I am an avid strength athlete, competing in amateur strongman competitions.
+      More technically, I extend current longitudinal models to accommodate heterogeneous, heteroscedastic, and correlated time series—reflecting the messy, real-world nature of medical data—to achieve superior predictive performance compared to conventional machine learning models.
+    </p>
+    <p>
+      I have engineered end-to-end ML pipelines—improving brain cancer classification by 20% and reducing system resource usage by up to 97%—and designed automated decision support systems for NICU ventilator weaning in collaboration with leading healthcare institutions.
+    </p>
+    <p>
+      Beyond research, I am passionate about teaching and curriculum development. I’ve taught mathematics from middle school to university levels, integrating computational methods and project-based learning to transform study into exploration.
+    </p>
+    <p>
+      Outside of academia, I am a dedicated strength athlete competing in amateur strongman competitions. The discipline and iterative improvement required in training are values that drive my work in research and teaching.
+    </p>
+    <p>
+      I am actively seeking technical opportunities in <strong>data science, machine learning, and applied research</strong> as well as educational roles in <strong>math education and curriculum development</strong>. Let’s connect!
     </p>
     <a href="https://github.com/ChrisG32123" class="btn" target="_blank">View My GitHub Projects</a>
+    <a href="Gerlach%20Data%20Science%20Resume.pdf" class="btn" target="_blank">Download My Technical Resume</a>
+    <a href="Gerlach%20Teaching%20Science%20Resume.pdf" class="btn" target="_blank">Download My Teaching Resume</a>
     <div class="visuals">
       <img src="placeholder-about.jpg" alt="Research visualization" />
     </div>
   </section>
   
+  <!-- RESEARCH PROJECTS & PUBLICATIONS Section -->
   <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Brain Cancer Progression Modeling:</strong> Leveraged LSTM-based models on MRI data to achieve state-of-the-art performance in predicting tumor evolution.</li>
-      <li><strong>NICU Ventilator Decision Support:</strong> Developed machine learning tools to assist clinicians in optimizing neonatal care.</li>
-      <li><strong>Plasma Simulations:</strong> Implemented advanced forecasting techniques for high-dimensional plasma systems, enhancing simulation efficiency.</li>
-    </ul>
+    <h2>Research Projects & Publications</h2>
+    <div class="project">
+      <h3>Automated Radiomics Extractor & Kidney Cancer Classification</h3>
+      <p>
+        (Ongoing) In this project, I am developing an imaging modality–agnostic radiomics extractor that streamlines feature extraction across diverse medical imaging pipelines. The system is integrated into a kidney cancer classification framework to facilitate early tumor detection and improve clinical decision-making.
+      </p>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, PyTorch</li>
+        <li><strong>Impact:</strong> Enhances early diagnosis by standardizing radiomics data extraction.</li>
+      </ul>
+    </div>
+    
+    <div class="project">
+      <h3>Brain Cancer Progression Modeling</h3>
+      <p>
+        (Ongoing) I developed a Transformer-based deep learning model that leverages sequential MRI radiomics data to predict glioma progression. This approach, which considers the entire time series of imaging data rather than a single snapshot, has improved predictive accuracy by 20%.
+      </p>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, PyTorch</li>
+        <li><strong>Impact:</strong> Enables earlier and more accurate prediction of tumor progression to inform clinical interventions.</li>
+      </ul>
+      <p>
+        <a href="BME_891_Final_Project.pdf" target="_blank">Read More</a>
+      </p>
+    </div>
+    
+    <div class="project">
+      <h3>NICU Ventilator Decision Support System</h3>
+      <p>
+        This project focuses on designing a decision support system for neonatal intensive care units to optimize ventilator weaning. Developed in collaboration with clinicians, the system analyzes patient data to determine the optimal timing for weaning, potentially reducing ventilation duration and improving outcomes.
+      </p>
+      <ul>
+        <li><strong>Impact:</strong> Aids clinicians in reducing ventilation time and enhancing neonatal care.</li>
+      </ul>
+    </div>
+    
+    <div class="project">
+      <h3>Plasma Simulations & High-Dimensional Forecasting</h3>
+      <p>
+        By applying advanced numerical methods and reduced-order modeling, this project enhances the efficiency of plasma simulations. Incorporating additional coupling physics, the system reduces computational costs while delivering more accurate high-dimensional forecasts.
+      </p>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, NumPy, SciPy, PDE Solvers</li>
+        <li><strong>Impact:</strong> Improves forecasting capabilities and advances plasma physics research.</li>
+      </ul>
+      <p>
+        <a href="Masters_Thesis.pdf" target="_blank">Read My Master’s Thesis</a>
+        <a href="APS Conference.pptx" target="_blank">View Conference Proceedings</a>
+      </p>
+    </div>
+    
     <div class="visuals">
       <img src="placeholder-projects.jpg" alt="Project overview" />
     </div>
   </section>
-  
-  <section id="research">
-    <h2>Research & Publications</h2>
-    <p>Explore my academic research and contributions:</p>
-    <ul>
-      <li><a href="Gerlach%20Data%20Science%20Resume.pdf" target="_blank">Download My CV</a></li>
-      <li><a href="BME_891_Final_Project.pdf" target="_blank">Glioma Progression Prediction</a></li>
-      <li><a href="Masters_Thesis.pdf" target="_blank">Read My Master’s Thesis</a></li>
-    </ul>
-    <div class="visuals">
-      <img src="placeholder-research.jpg" alt="Research overview" />
-    </div>
-  </section>
-  
+    
+  <!-- TEACHING & CURRICULUM DEVELOPMENT Section -->
   <section id="teaching">
     <h2>Teaching & Curriculum Development</h2>
     <p>
-      With extensive experience teaching calculus and advanced mathematics, I specialize in creating engaging, project-based learning experiences.
-      My courses emphasize interdisciplinary approaches, integrating data science with traditional mathematical theory.
+      I have taught mathematics at multiple levels, making complex ideas accessible through project-based learning and real-world applications. My teaching philosophy centers on integrating computational methods into traditional math instruction to foster deeper understanding and ignite curiosity.
     </p>
+    <h3>Experience</h3>
+    <ul>
+      <li><strong>Tessellations School (Geometry-Calculus BC, Python for Middle School):</strong> Developed and implemented innovative, project-based curricula that combine data science concepts with hands-on problem solving. Led interdisciplinary initiatives that bridge traditional math with modern computational techniques.</li>
+      <li><strong>University Teaching Assistant (Calculus I-III, Linear Algebra, Differential Equations):</strong> Facilitated recitations, crafted interactive learning modules, and provided personalized mentoring to help students master advanced mathematical concepts.</li>
+      <li><strong>Curriculum Developer:</strong> Designed comprehensive interdisciplinary lessons that merge data science, statistics, and mathematical modeling to engage diverse learners and connect theory with real-world applications.</li>
+    </ul>
   </section>
   
+  <!-- CONTACT Section -->
   <section id="contact">
     <h2>Contact</h2>
     <p>
-      Let’s connect! Feel free to reach out to discuss collaborations, research, or teaching opportunities:
+      Let’s connect! Whether you're interested in research collaborations, data science roles, or innovative teaching initiatives, feel free to reach out.
     </p>
+    <a href="mailto:chrisg.32123@gmail.com" class="btn">Connect with Me</a>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
     <ul>
       <li>Email: <a href="mailto:chrisg.32123@gmail.com">chrisg.32123@gmail.com</a></li>
       <li>LinkedIn: <a href="https://www.linkedin.com/in/chris-m-gerlach" target="_blank">linkedin.com/in/chris-m-gerlach</a></li>
