@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* CSS Reset and Global Styles */
+    /* Reset & Global */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -21,20 +21,18 @@
     a { text-decoration: none; color: #3498db; transition: color 0.3s; }
     a:hover { color: #2980b9; }
 
-    /* Header Styles */
+    /* Header */
     header {
       background: linear-gradient(135deg, #34495e, #2c3e50);
       color: #fff;
       padding: 80px 10%;
       text-align: center;
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .photo img {
-      width: 150px;
-      height: 150px;
+      width: 150px; height: 150px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid #fff;
@@ -51,7 +49,7 @@
       margin-top: 10px;
     }
 
-    /* Navigation Styles */
+    /* Navigation */
     nav {
       background: #2c3e50;
       padding: 15px 10%;
@@ -71,13 +69,13 @@
     }
     nav a:hover { color: #f39c12; }
 
-    /* Section Styles */
+    /* Sections */
     section {
       margin: 60px 10%;
       padding: 40px;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s forwards;
@@ -101,7 +99,7 @@
       content: '✓'; position: absolute; left: 0; color: #3498db;
     }
 
-    /* Project Card Styles */
+    /* Projects */
     .project {
       border: 1px solid #ddd;
       border-radius: 10px;
@@ -121,15 +119,12 @@
       content: '•'; position: absolute; left: 0; color: #3498db;
     }
 
-    /* Visuals and Button */
+    /* Visuals & Buttons */
     .visuals img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-      transition: transform 0.3s;
+      max-width: 100%; border-radius: 10px;
+      margin-top: 20px; transition: transform 0.3s;
     }
     .visuals img:hover { transform: scale(1.05); }
-
     .btn {
       display: inline-block;
       padding: 15px 30px;
@@ -169,7 +164,7 @@
       padding: 30px 10%;
     }
 
-    /* Animation Keyframes */
+    /* Animation */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -185,14 +180,16 @@
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="photo">
-      <img src="assets/me.jpg" alt="Photo of Chris Gerlach" />
+      <img src="assets/me.jpg" alt="Photo of Chris Gerlach">
     </div>
     <h1>Chris Gerlach</h1>
     <p>Data Scientist | STEM Educator | PhD Student</p>
   </header>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About Me</a>
     <a href="#projects">Research Projects &amp; Publications</a>
@@ -203,33 +200,80 @@
   <!-- ABOUT ME -->
   <section id="about">
     <h2>About Me</h2>
-    <!-- your existing content here… -->
-    <a id="cv-link" href="#" class="btn" target="_blank">Loading CV…</a>
+    <p>Most medical imaging analyses focus solely on the final snapshot, but I believe there’s a richer story to be told. By incorporating previous scans into a dynamic time series, my research builds models that capture the full evolution of a condition for enhanced accuracy.</p>
+    <p>More technically, I extend current longitudinal models to accommodate heterogeneous, heteroscedastic, and correlated time series—reflecting the messy, real-world nature of medical data—to achieve superior predictive performance compared to conventional machine learning models.</p>
+    <p>I have engineered end-to-end ML pipelines—improving brain cancer classification by 20% and reducing system resource usage by up to 97%—and designed automated decision support systems for NICU ventilator weaning in collaboration with leading healthcare institutions.</p>
+    <p>Beyond research, I am passionate about teaching and curriculum development. I’ve taught mathematics from middle school to university levels, integrating computational methods and project-based learning to transform study into exploration.</p>
+    <p>Outside of academia, I am a dedicated strength athlete competing in amateur strongman competitions. The discipline and iterative improvement required in training are values that drive my work in research and teaching.</p>
+    <p>I am actively seeking technical opportunities in <strong>data science, machine learning, and applied research</strong> as well as educational roles in <strong>math education and curriculum development</strong>. Let’s connect!</p>
+    <a href="assets/CV.pdf" class="btn" target="_blank">Download My CV</a>
+    <a href="https://github.com/ChrisG32123" class="btn" target="_blank">View My GitHub Projects</a>
     <div class="visuals">
-      <img src="placeholder-about.jpg" alt="Research visualization" />
+      <img src="placeholder-about.jpg" alt="Research visualization">
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <h2>Research Projects &amp; Publications</h2>
-    <!-- your project cards… -->
+    <div class="project">
+      <h3>Automated Radiomics Extractor &amp; Kidney Cancer Classification</h3>
+      <p>(Ongoing) Developing an imaging modality–agnostic radiomics extractor integrated into a kidney cancer classification framework to facilitate early tumor detection.</p>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, PyTorch</li>
+        <li><strong>Impact:</strong> Standardizes radiomics extraction and improves clinical decision-making.</li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>Brain Cancer Progression Modeling</h3>
+      <p>(Ongoing) Transformer-based model leveraging sequential MRI radiomics data to predict glioma progression with 20% better accuracy.</p>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, PyTorch</li>
+        <li><strong>Impact:</strong> Enables earlier and more accurate clinical interventions.</li>
+      </ul>
+      <p><a href="BME_891_Final_Project.pdf" target="_blank">Read More</a></p>
+    </div>
+    <div class="project">
+      <h3>NICU Ventilator Decision Support System</h3>
+      <p>Designing a decision support system for neonatal intensive care to optimize ventilator weaning, reducing ventilation duration and improving outcomes.</p>
+      <ul>
+        <li><strong>Impact:</strong> Aids clinicians in enhancing neonatal care.</li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>Plasma Simulations &amp; High-Dimensional Forecasting</h3>
+      <p>Advanced numerical methods and reduced-order modeling to improve efficiency and accuracy of plasma simulations.</p>
+      <ul>
+        <li><strong>Tech Stack:</strong> Python, NumPy, SciPy</li>
+        <li><strong>Impact:</strong> Advances plasma physics research.</li>
+      </ul>
+      <p>
+        <a href="Masters_Thesis.pdf" target="_blank">Read My Master’s Thesis</a>
+        <a href="APS Conference.pptx" target="_blank">Conference Proceedings</a>
+      </p>
+    </div>
   </section>
 
   <!-- TEACHING -->
   <section id="teaching">
     <h2>Teaching &amp; Curriculum Development</h2>
-    <!-- your teaching content… -->
+    <p>I design project-based curricula that integrate computational methods into traditional math instruction to foster deeper understanding and ignite curiosity.</p>
+    <h3>Experience</h3>
+    <ul>
+      <li><strong>Tessellations School:</strong> Developed interdisciplinary Geometry–Calculus BC and Python curricula for middle school.</li>
+      <li><strong>San Jose State University:</strong> Graduate TA for Calculus I–III, Linear Algebra, and Differential Equations; created interactive learning modules.</li>
+      <li><strong>Curriculum Developer:</strong> Designed data science and mathematical modeling labs for high school.</li>
+    </ul>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Let’s connect! …</p>
+    <p>Whether you're interested in research collaborations, data science roles, or innovative teaching initiatives, feel free to reach out.</p>
     <a href="mailto:chrisg.32123@gmail.com" class="btn">Connect with Me</a>
     <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
       <textarea placeholder="Your Message" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
@@ -244,23 +288,5 @@
   <footer>
     <p>&copy; 2025 Chris Gerlach. All rights reserved.</p>
   </footer>
-
-  <script>
-    (async function(){
-      const repo = 'ChrisG32123/cv-builder';
-      const api  = `https://api.github.com/repos/${repo}/releases/latest`;
-      try {
-        const resp = await fetch(api);
-        const data = await resp.json();
-        const pdf  = data.assets.find(a => a.name.endsWith('.pdf'));
-        if (!pdf) throw 'No PDF asset found';
-        const link = document.getElementById('cv-link');
-        link.href        = pdf.browser_download_url;
-        link.textContent = 'Download My CV (latest)';
-      } catch(e) {
-        console.error(e);
-      }
-    })();
-  </script>
 </body>
 </html>
