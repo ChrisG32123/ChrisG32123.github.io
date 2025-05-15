@@ -69,22 +69,15 @@
     }
     nav a:hover { color: #f39c12; }
 
-    /* Sections */
+    /* Sections (always visible now) */
     section {
       margin: 60px 10%;
       padding: 40px;
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
+      /* removed opacity/transform/animation */
     }
-    section:nth-of-type(1) { animation-delay: 0.2s; }
-    section:nth-of-type(2) { animation-delay: 0.4s; }
-    section:nth-of-type(3) { animation-delay: 0.6s; }
-    section:nth-of-type(4) { animation-delay: 0.8s; }
-    section:nth-of-type(5) { animation-delay: 1s; }
     section h2 {
       color: #2c3e50;
       margin-bottom: 20px;
@@ -141,11 +134,17 @@
       transform: translateY(-3px);
     }
 
+    /* Contact: tighten up the “Connect” button spacing */
+    #contact .btn {
+      margin-top: 8px;
+    }
+
     /* Contact Form */
     form {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
     form input, form textarea {
@@ -154,7 +153,6 @@
       border-radius: 5px;
       font-size: 1em;
     }
-    form button { align-self: flex-start; }
 
     /* Footer */
     footer {
@@ -162,12 +160,6 @@
       background: #2c3e50;
       color: #fff;
       padding: 30px 10%;
-    }
-
-    /* Animation */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* Responsive */
